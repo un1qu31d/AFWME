@@ -1,0 +1,1624 @@
+/*
+  JuventusFans-Bold
+  Questrial-Regular
+  @media (min-width: 1366px) {
+  }
+  @media (min-width: 1024px) and (max-width: 1365px) {
+  }
+  @media (min-width: 960px) and (max-width: 1023px) {
+  }
+  @media (min-width: 768px) and (max-width: 959px) {
+  }
+  @media (min-width: 640px) and (max-width: 767px) {
+  }
+  @media (max-width: 639px) {
+  }
+*/
+/* RESET */
+html, body {
+  height: 100%;
+}
+img, object {
+  display: block;
+}
+p, ul, fieldset, input {
+  margin: 0;
+}
+fieldset, input {
+  border: none;
+}
+ul, fieldset, input {
+  padding: 0;
+}
+li {
+  list-style-type: none;
+}
+a, abbr[title] {
+  text-decoration: none;
+}
+a {
+  color: inherit;
+}
+abbr[title] {
+  border-bottom-width: 0;
+}
+/* GENERAL */
+[lang="en"] {
+  font-family: 'Questrial-Regular', sans-serif;
+}
+a.theme--arrowed::after {
+  content: '';
+  width: 75px;
+  height: 32px;
+  display: inline-block;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+[dir="ltr"] a.theme--arrowed::after {
+  margin-left: 12px;
+  background-image: url('../img/link-arrow--ltr.png');
+}
+[dir="rtl"] a.theme--arrowed::after {
+  margin-right: 12px;
+  background-image: url('../img/link-arrow--rtl.png');
+}
+.icon {
+  display: block;
+  width: 32px;
+  height: 32px;
+  background-color: #000;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  -webkit-mask-position: 50% 50%;
+}
+.icon.type--facebook {
+  -webkit-mask-image: url('../img/icon--facebook.svg');
+}
+.icon.type--pinterest {
+  -webkit-mask-image: url('../img/icon--pinterest.svg');
+}
+.icon.type--twitter {
+  -webkit-mask-image: url('../img/icon--twitter.svg');
+}
+.icon.type--instagram {
+  -webkit-mask-image: url('../img/icon--instagram.svg');
+}
+.icon.type--magnifying-glass {
+}
+.icon.type--magnifying-glass.status--on {
+  -webkit-mask-image: url('../img/icon--close.svg');
+}
+.icon.type--magnifying-glass.status--off {
+  -webkit-mask-image: url('../img/icon--magnifying-glass.svg');
+}
+.icon.type--menu {
+}
+.icon.type--menu.status--on {
+  -webkit-mask-image: url('../img/icon--close.svg');
+}
+.icon.type--menu.status--off {
+  -webkit-mask-image: url('../img/icon--menu.svg');
+}
+.icon.type--speaker {
+}
+.icon.type--speaker.status--on {
+  -webkit-mask-image: url('../img/icon--speaker--on.svg');
+}
+.icon.type--speaker.status--off {
+  -webkit-mask-image: url('../img/icon--speaker--off.svg');
+}
+/* SECTION */
+.component-section {
+  
+}
+.component-section.size--large-container {
+  padding: 0 4%;
+}
+.component-section.theme--header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  box-sizing: border-box;
+  width: 100%;
+  box-shadow: 0 3px 6px 0 #00000029;
+  background-color: #fff;
+}
+.component-section.theme--header + .component-section {
+  margin-top: 80px;
+}
+.component-section.theme--dark {
+  background-color: #f8f8f8;
+}
+.component-section.theme--blur {
+  filter: blur(6px);
+}
+.component-section.theme--nature {
+  background-color: #f8f8f8;
+  background-image: url('../img/theme--nature.svg');
+  background-repeat: repeat-x;
+  background-position: 50% 100%;
+  background-size: 108%;
+}
+.component-section.theme--africa {
+  background-image: url('../img/theme--africa.svg');
+  background-repeat: no-repeat;
+  background-position: 50% 32px;
+  background-size: 50%;
+}
+/* HEADER */
+.component-header {
+  padding: 16px 0;
+  display: grid;
+}
+  .header__logo {
+  }
+  .header__menu {
+  }
+@media (min-width: 768px) {
+.component-header {
+  grid-auto-flow: column;
+  grid-gap: 32px;
+  justify-content: space-between;
+  align-items: center;
+}
+}
+@media (max-width: 767px) {
+  .header__menu {
+    display: none;
+  }
+}
+/* FOOTER */
+.component-footer {
+  display: grid;
+}
+  .footer__links {
+    padding: 24px 0;
+  }
+  .footer__social {
+
+  }
+  .footer__subscription, .footer__copyright {
+    padding-top: 24px;
+    background-color: #f8f8f8;
+  }
+  .footer__subscription {
+
+  }
+  .footer__copyright {
+    padding-bottom: 24px;
+  }
+@media (min-width: 1024px) {
+.component-footer {
+  grid-template-columns: 50% repeat(2, 25%);
+  grid-template-rows: max-content 1fr;
+}
+  [dir="ltr"] .footer__links {
+    padding-right: 24px;
+    padding-left: 8%;
+  }
+  [dir="rtl"] .footer__links {
+    padding-right: 8%;
+    padding-left: 24px;
+  }
+  .footer__links, .footer__social {
+    grid-row-end: span 2;
+  }
+  [dir="ltr"] .footer__subscription, [dir="ltr"] .footer__copyright {
+    padding-right: 16%;
+  }
+  [dir="rtl"] .footer__subscription, [dir="rtl"] .footer__copyright {
+    padding-left: 16%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+.component-footer {
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: max-content max-content 1fr;
+}
+  .footer__links {
+    grid-column-end: span 2;
+  }
+  .footer__social {
+    grid-row-end: span 2;
+  }
+  [dir="ltr"] .footer__subscription, [dir="ltr"] .footer__copyright {
+    padding-right: 8%;
+  }
+  [dir="rtl"] .footer__subscription, [dir="rtl"] .footer__copyright {
+    padding-left: 8%;
+  }
+}
+@media (min-width: 768px) {
+  [dir="ltr"] .footer__subscription, [dir="ltr"] .footer__copyright {
+    padding-left: 24px;
+  }
+  [dir="rtl"] .footer__subscription, [dir="rtl"] .footer__copyright {
+    padding-right: 24px;
+  }
+}
+@media (max-width: 1023px) {
+  .footer__links {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+}
+@media (max-width: 767px) {
+  .footer__subscription, .footer__copyright {
+    padding-right: 4%;
+    padding-left: 4%;
+  }
+}
+/* STICKY */
+.component-sticky {
+}
+  .sticky__side-button, .sticky__bullets {
+    position: fixed;
+    z-index: 1;
+  }
+  .sticky__side-button {
+    top: calc(50% - (64px / 2) + 40px);
+    box-sizing: border-box;
+    height: 64px;
+    padding: 16px;
+    background-color: #0000000f;
+    display: grid;
+    place-content: center;
+    place-items: center;
+  }
+  [dir="ltr"] .sticky__side-button.type--start, [dir="rtl"] .sticky__side-button.type--end {
+    left: 0;
+    padding-left: 4%;
+  }
+  [dir="rtl"] .sticky__side-button.type--start, [dir="ltr"] .sticky__side-button.type--end {
+    right: 0;
+    padding-right: 4%;
+  }
+  .sticky__bullets {
+    top: calc(50% + (64px / 2) + 16px + 40px);
+  }
+  [dir="ltr"] .sticky__bullets {
+    right: 4%;
+  }
+  [dir="rtl"] .sticky__bullets {
+    left: 4%;
+  }
+/* POPUP */
+.component-popup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  overflow: auto;
+  display: grid;
+  grid-template-rows: max-content 1fr;
+  background-color: #ffffff8c;
+}
+.component-popup:not(.status--active) {
+  display: none;
+}
+  .popup__header {
+    padding: 16px 4%;
+    display: grid;
+    background-color: #fff;
+  }
+    .popup__header__logo {
+    }
+  .popup__main {
+    padding: 0 calc(4% + 64px) 0;
+  }
+@media (min-width: 768px) {
+  .popup__header {
+    grid-auto-flow: column;
+    grid-gap: 32px;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+/* DIVISION */
+.component-division {
+  box-sizing: border-box;
+  padding: 32px 0;
+  display: grid;
+  grid-template-rows: max-content 1fr;
+  grid-gap: 32px;
+}
+.component-division.size--screen {
+  min-height: calc(100vh - 80px);
+}
+.component-division.theme--label {
+  padding-top: 0;
+  grid-gap: 0;
+}
+.component-division.theme--eadge {
+  padding-bottom: 0;
+}
+  .division__header {
+    width: calc(92% - 128px);
+    max-width: 960px;
+    justify-self: center;
+    display: grid;
+    grid-gap: 32px;
+    text-align: center;
+  }
+    .division__title {
+      text-transform: uppercase;
+      font-family: 'JuventusFans-Bold', sans-serif;
+      font-size: 2em;
+      line-height: 2em;
+    }
+    .division__description {
+      line-height: 1.8em;
+    }
+  .division__main {
+
+  }
+  .component-division.theme--label .division__main {
+    border-top: 1px solid #7070704a;
+  }
+  .component-division.size--container .division__main {
+    width: calc(92% - 128px);
+    max-width: 960px;
+    justify-self: center;
+  }
+@media (max-width: 767px) {
+.component-division.theme--eadge.theme--news {
+  padding-bottom: 32px;
+}
+}
+/* LOGO */
+.component-logo {
+  
+}
+  .component-logo a {
+    
+  }
+    .component-logo object, .component-logo img {
+      width: 100%;
+      height: 48px;
+    }
+    .component-logo img {
+      object-fit: contain;
+    }
+/* MENU */
+.component-menu {
+  font-size: 1.2em;
+}
+.component-menu.theme--header {
+  overflow: hidden;
+}
+.component-menu.theme--popup {
+  box-sizing: border-box;
+  height: 100%;
+}
+  .component-menu ul {
+  }
+  .component-menu.theme--header ul {
+    margin: 0 -48px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-image: repeating-linear-gradient(180deg, transparent 0, transparent 15px, #000 15px, #000 17px, transparent 17px, transparent 32px);
+  }
+  .component-menu.theme--popup ul {
+    height: 100%;
+    display: grid;
+    align-content: center;
+    grid-gap: 16px;
+  }
+    .component-menu li {
+    }
+    .component-menu.theme--header li {
+      margin: 0 24px;
+      padding: 0 24px;
+      height: 32px;
+      background-color: #fff;
+      text-transform: uppercase;
+      line-height: 32px;
+    }
+    .component-menu.theme--popup li {
+    }
+    .component-menu.theme--popup li::first-letter {
+      text-transform: uppercase;
+    }
+      .component-menu a {
+      }
+      .component-menu.theme--header a {
+      }
+      .component-menu.theme--popup a {
+      }
+      .component-menu a:hover {
+        text-decoration: underline;
+      }
+      .component-menu.theme--header a:hover {
+      }
+      .component-menu.theme--popup a:hover {
+      }
+@media (min-width: 768px) {
+  .component-menu.theme--popup {
+    padding: 24px 64px;
+  }
+}
+@media (max-width: 767px) {
+    .component-menu.theme--popup li {
+      text-align: center;
+    }
+}
+/* LINKS */
+.component-links {
+  display: grid;
+  grid-gap: 32px;
+  overflow: hidden;
+}
+  .links__title {
+    font-size: 1.2em;
+  }
+  .links__items {
+    margin: -16px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+    .links__item {
+      margin: 16px;
+    }
+      .links__item ul {
+        display: grid;
+        grid-gap: 12px;
+      }
+        .links__item li {
+        }
+        .links__item li::first-letter {
+          text-transform: uppercase;
+        }
+          .links__item a {
+          }
+          .links__item a:hover {
+            text-decoration: underline;
+          }
+            .links__item span {
+            }
+@media (max-width: 767px) {
+  .links__title {
+    text-align: center;
+  }
+  .links__items {
+    justify-content: space-around;
+  }
+        .links__item li {
+          text-align: center;
+        }
+}
+/* SOCIAL */
+.component-social {
+  height: 100%;
+}
+  .component-social ul {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(2, 50%);
+  }
+    .component-social li {
+      box-sizing: border-box;
+      border: 1px solid #eee;
+      display: grid;
+      place-content: center;
+      place-items: center;
+    }
+      .component-social a {
+      }
+        .component-social span {
+          background-color: #c1c1c1;
+        }
+        .component-social a:hover span {
+          background-color: #000;
+        }
+@media (min-width: 768px) {
+  .component-social li {
+    height: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .component-social li {
+    height: 64px;
+  }
+}
+/* SUBSCRIPTION */
+.component-subscription {
+
+}
+  .component-subscription .subscription__form {
+    display: grid;
+    grid-gap: 16px;
+  }
+    .component-subscription .subscription__form__title {
+
+    }
+    .component-subscription .subscription__form__title::first-letter {
+      text-transform: uppercase;
+    }
+    .component-subscription .subscription__form__hints {
+      display: grid;
+      grid-gap: 4px;
+    }
+      .component-subscription .subscription__form__hint {
+        font-size: 0.8em;
+      }
+    .component-subscription .subscription__form__items {
+      display: grid;
+      grid-gap: 16px;
+    }
+      .component-subscription .subscription__form__item {
+
+      }
+        .component-subscription .subscription__form__item input {
+          outline-width: 0;
+          box-sizing: border-box;
+          padding: 8px 16px;
+        }
+        .component-subscription .subscription__form__item input[type="email"] {
+          border: 1px solid #cbcbcb;
+          width: 100%;
+        }
+        .component-subscription .subscription__form__item input[type="email"]:focus {
+          border-color: #000;
+        }
+        .component-subscription .subscription__form__item input[type="submit"] {
+          cursor: pointer;
+          border: 1px solid #000;
+          background-color: transparent;
+        }
+        .component-subscription .subscription__form__item input[type="submit"]:hover {
+          background-color: #eee;
+        }
+@media (min-width: 768px) {
+      .component-subscription .subscription__form__item.theme--submit {
+        text-align: end;
+      }
+}
+@media (max-width: 767px) {
+    .component-subscription .subscription__form__title {
+      text-align: center;
+    }
+      .component-subscription .subscription__form__item {
+        text-align: center;
+      }
+}
+/* COPYRIGHT */
+.component-copyright {
+  line-height: 1.8em;
+  text-transform: capitalize;
+}
+  .component-copyright a {
+    border-bottom: 1px dotted #000;
+  }
+  .component-copyright a:hover {
+    border-bottom-style: solid;
+  }
+  .component-copyright abbr {
+    text-transform: uppercase;
+  }
+@media (max-width: 767px) {
+.component-copyright {
+  text-align: center;
+}
+}
+/* BULLETS */
+.component-bullets {
+}
+  .component-bullets ul {
+    display: grid;
+    grid-gap: 12px;
+  }
+    .component-bullets li {
+    }
+      .component-bullets a {
+      }
+        .component-bullets span {
+          border-radius: 50%;
+          width: 12px;
+          height: 12px;
+          display: block;
+          background-color: #00000044;
+        }
+        .component-bullets li.status--active span, .component-bullets li:hover span {
+          background-color: #000;
+        }
+/* SEARCH */
+.component-search {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  align-content: center;
+}
+  .component-search .search__form {
+    display: grid;
+    grid-gap: 16px;
+  }
+    .component-search .search__form__title {
+      text-transform: uppercase;
+      text-align: center;
+      font-family: 'JuventusFans-Bold', sans-serif;
+      font-size: 2em;
+    }
+    .component-search .search__form__items {
+      border: 1px solid #000;
+      display: grid;
+      grid-template-columns: 1fr max-content;
+    }
+      .component-search .search__form__item {
+
+      }
+        .component-search .search__form__item input {
+          box-sizing: border-box;
+          outline-width: 0;
+          height: 32px;
+          display: block;
+          background-color: transparent;
+        }
+        .component-search .search__form__item input[type="text"] {
+          padding: 0 16px;
+          width: 100%;
+        }
+        .component-search .search__form__item input[type="submit"] {
+          cursor: pointer;
+          padding: 4px;
+          width: 32px;
+          background-color: #000;
+          -webkit-mask-origin: content-box;
+          -webkit-mask-image: url('../img/icon--magnifying-glass.svg');
+          -webkit-mask-repeat: no-repeat;
+          -webkit-mask-size: contain;
+          -webkit-mask-position: 50% 50%;
+        }
+@media (min-width: 768px) {
+  .component-search {
+    padding: 24px 64px;
+  }
+}
+@media (max-width: 767px) {
+  .component-search {
+    padding: 24px 0;
+  }
+}
+/* EVENT INTRO */
+.component-event-intro {
+  position: relative;
+  min-height: calc(100vh - 80px);
+  display: grid;
+  font-size: 1.2em;
+}
+  .event-intro__video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  .event-intro__video {
+
+  }
+    .event-intro__video video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .event-intro__video::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #eeeeee44;
+    }
+  .event-intro__content {
+    position: relative;
+    box-sizing: border-box;
+    padding: 4%;
+    place-self: stretch;
+    display: grid;
+    align-content: end;
+    align-items: end;
+    grid-gap: 8px 64px;
+  }
+    .event-intro__controllers {
+    }
+      .event-intro__controllers ul {
+        margin: -8px;
+        display: flex;
+        flex-wrap: wrap;
+      }
+        .event-intro__controllers li {
+          margin: 8px;
+        }
+    .event-intro__brief {
+      display: grid;
+      grid-gap: 8px;
+    }
+      .event-intro__brief__data, .event-intro__brief__location {
+        line-height: 32px;
+      }
+      .event-intro__brief__data::first-letter, .event-intro__brief__location::first-letter {
+        text-transform: uppercase;
+      }
+      .event-intro__brief__data {
+        
+      }
+      .event-intro__brief__location {
+        
+      }
+      .event-intro__brief__options {
+        overflow: hidden;
+      }
+        .event-intro__brief__options ul {
+          margin: -8px;
+          display: flex;
+          flex-wrap: wrap;
+        }
+          .event-intro__brief__options li {
+            margin: 8px;
+          }
+            .event-intro__brief__options a {
+              display: block;
+              border: 3px solid #000;
+              padding: 12px 24px;
+              text-transform: capitalize;
+            }
+            .event-intro__brief__options li:hover a {
+              text-decoration: underline;
+            }
+@media (min-width: 768px) {
+  .event-intro__content {
+    grid-auto-flow: column;
+    justify-content: space-between;
+  }
+}
+@media (max-width: 767px) {
+  .event-intro__content {
+  }
+    .event-intro__brief {
+      justify-items: center;
+    }
+        .event-intro__brief__options ul {
+          justify-content: center;
+        }
+        .event-intro__controllers ul {
+          justify-content: center;
+        }
+}
+/* ABOUT US */
+.component-about-us {
+  display: grid;
+  grid-gap: 64px;
+}
+.component-about-us.theme--screen {
+  padding: 0 64px;
+}
+  .about-us__image {
+    
+  }
+    .about-us__image img {
+      margin: 0 auto;
+      max-width: 100%;
+    }
+  .about-us__content {
+    display: grid;
+    grid-gap: 32px;
+    text-align: center;
+  }
+/* MAP */
+.component-map {
+  height: 100%;
+}
+.component-map.theme--screen {
+  box-sizing: border-box;
+  padding: 0 calc(4% + 64px);
+}
+  .map__view {
+    width: 100%;
+    height: 100%;
+    min-height: 240px;
+  }
+/* ALERT */
+.component-alert {
+}
+.component-alert.theme--screen {
+  box-sizing: border-box;
+  padding: 0 calc(4% + 64px);
+  height: 100%;
+  display: grid;
+}
+  .alert__content {
+    place-self: center;
+    text-align: center;
+    font-family: 'JuventusFans-Bold', sans-serif;
+  }
+  .alert__content::first-letter {
+    text-transform: uppercase;
+  }
+@media (min-width: 768px) {
+  .alert__content {
+    font-size: 6em;
+  }
+}
+@media (max-width: 767px) {
+  .alert__content {
+    font-size: 4em;
+  }
+}
+/* NEWS */
+.component-news {
+
+}
+  .news__items {
+    display: grid;
+  }
+    .news__item {
+      display: grid;
+    }
+      .news__item__image {
+        position: relative;
+        padding-top: 56.25%;
+      }
+        .news__item__image img {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      .news__item__title {
+        text-transform: capitalize;
+        text-align: center;
+        font-family: 'JuventusFans-Bold', sans-serif;
+        font-size: 2em;
+      }
+      .news__item__description {
+        align-self: center;
+        text-align: center;
+        line-height: 1.8em;
+      }
+      .news__item__options {
+        justify-self: end;
+        text-transform: capitalize;
+      }
+@media (min-width: 768px) {
+    .news__item {
+      grid-template-rows: 32px max-content 1fr max-content 32px;
+    }
+    .news__item:nth-child(odd) {
+      grid-template-columns: 4% calc(46% - 32px) 32px 50%;
+      grid-template-areas: ". . . image" ". title . image" ". description . image" ". options . image" ". . . image";
+      justify-content: end;
+    }
+    .news__item:nth-child(even) {
+      grid-template-columns: 50% 32px calc(46% - 32px) 4%;
+      grid-template-areas: "image . . ." "image . title ." "image . description ." "image . options ." "image . . .";
+      justify-content: start;
+    }
+      .news__item__image {
+        grid-area: image;
+      }
+      .news__item__title {
+        grid-area: title;
+      }
+      .news__item__description {
+        grid-area: description;
+        padding-top: 24px;
+        padding-bottom: 24px;
+      }
+      .news__item__options {
+        grid-area: options;
+      }
+}
+@media (max-width: 767px) {
+.component-news {
+  padding-right: 4%;
+  padding-left: 4%;
+}
+  .news__items {
+    grid-gap: 32px;
+  }
+    .news__item {
+      grid-gap: 24px;
+    }
+}
+/* ARTICLES */
+.component-articles {
+
+}
+  .articles__items {
+    display: grid;
+    grid-gap: 32px;
+  }
+    .articles__item {
+      display: grid;
+      grid-template-rows: max-content max-content 1fr max-content max-content;
+    }
+      .articles__item__date, .articles__item__title, .articles__item__description {
+        text-align: center;
+      }
+      .articles__item__date {
+        text-transform: capitalize;
+        color: #263843;
+      }
+      .articles__item__title {
+        padding: 32px 0;
+        text-transform: capitalize;
+        font-family: 'JuventusFans-Bold', sans-serif;
+        font-size: 3em;
+        color: #263843;
+      }
+      .articles__item__image {
+        position: relative;
+        padding-top: 56.25%
+      }
+        .articles__item__image img {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      .articles__item__description, .articles__item__options {
+        padding: 24px;
+        background-color: #fff;
+        box-shadow: 0 3px 3px 0 #00000029;
+      }
+      .articles__item__description {
+      }
+      .articles__item__options {
+        text-align: end;
+        text-transform: capitalize;
+      }
+@media (min-width: 1024px) {
+  .articles__items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+    .articles__item:not(:nth-child(1)):not(:nth-child(2)) {
+      display: grid;
+      border-top: 1px solid #c3ccd366;
+      padding-top: 32px;
+    }
+    .articles__item {
+      grid-row-end: span 4;
+    }
+    .articles__item:nth-child(3n+1) {
+      grid-row-end: span 5;
+    }
+}
+@media (max-width: 1023px) {
+    .articles__item:not(:nth-child(1)) {
+      border-top: 1px solid #c3ccd366;
+      padding-top: 32px;
+    }
+}
+/* ARTICLE */
+.component-article {
+  display: grid;
+  grid-gap: 64px;
+  align-content: start;
+  padding-bottom: 32px;
+  min-height: calc(100vh - 80px);
+}
+  .article__image, .article__title {
+    height: 40vh;
+  }
+  .article__image {
+    position: absolute;
+    width: 100%;
+  }
+    .article__image img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: blur(6px);
+    }
+  .article__content, .article__title {
+    width: calc(92% - 128px);
+    max-width: 960px;
+    justify-self: center;
+    text-align: center;
+  }
+  .article__title {
+    position: relative;
+    display: grid;
+    place-content: center;
+    place-items: center;
+    text-transform: capitalize;
+    text-shadow: 0 3px 6px #00000029;
+    font-family: 'JuventusFans-Bold', sans-serif;
+    font-size: 10vh;
+    color: #fff;
+  }
+  .article__content {
+    line-height: 1.8em;
+  }
+/* MEMBERS */
+.component-members {
+}
+  .members__items {
+  }
+    .members__item {
+      padding: 0 calc(4% + 64px);
+      display: grid;
+    }
+    .members__item:nth-child(odd) {
+      background-color: #f8f8f8;
+    }
+      .members__item__image {
+        position: relative;
+      }
+        .members__item__image img {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: 50% 0%;
+        }
+      .members__item__name {
+        text-transform: capitalize;
+        text-align: center;
+        font-family: 'JuventusFans-Bold', sans-serif;
+        font-size: 2em;
+      }
+      .members__item__description {
+        align-self: center;
+        text-align: center;
+        line-height: 1.8em;
+      }
+      .members__item__social {
+      }
+        .members__item__social ul {
+          margin: -16px;
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+          .members__item__social li {
+            margin: 16px;
+          }
+            .members__item__social a {
+            }
+@media (min-width: 1024px) {
+    .members__item {
+      grid-template-columns: repeat(2, 50%);
+      grid-template-rows: 64px max-content 1fr max-content 64px;
+    }
+    .members__item:nth-child(odd) {
+      grid-template-areas: "image ." "image name" "image description" "image social" "image .";
+    }
+    .members__item:nth-child(even) {
+      grid-template-areas: ". image" "name image" "description image" "social image" ". image";
+    }
+      .members__item > * {
+        padding-right: 32px;
+        padding-left: 32px;
+      }
+      .members__item__image {
+        grid-area: image;
+        padding-top: 150%;
+      }
+      .members__item__name {
+        grid-area: name;
+      }
+      .members__item__description {
+        grid-area: description;
+        padding-top: 24px;
+        padding-bottom: 24px;
+      }
+      .members__item__social {
+        grid-area: social;
+      }
+}
+@media (max-width: 1023px) {
+    .members__item {
+      padding-top: 24px;
+      padding-bottom: 24px;
+      grid-gap: 24px;
+    }
+      .members__item__image {
+        margin: 0 auto;
+      }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+      .members__item__image {
+        width: 320px;
+        padding-top: 480px;
+      }
+}
+@media (max-width: 639px) {
+      .members__item__image {
+        width: 80%;
+        padding-top: 120%;
+      }
+}
+/* MEMBER */
+.component-member {
+  display: grid;
+  grid-gap: 32px 0;
+  align-content: start;
+  padding: 0 calc(4% + 64px);
+  min-height: calc(100vh - 80px);
+}
+  .member__image {
+    position: relative;
+  }
+    .member__image img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: 50% 100%;
+    }
+  .member__name {
+    text-transform: capitalize;
+    text-align: center;
+    font-family: 'JuventusFans-Bold', sans-serif;
+    font-size: 2em;
+  }
+  .member__description {
+    align-self: center;
+    text-align: center;
+    line-height: 1.8em;
+  }
+  .member__social {
+  }
+    .member__social ul {
+      margin: -16px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+      .member__social li {
+        margin: 16px;
+      }
+        .member__social a {
+        }
+@media (min-width: 1024px) {
+.component-member {
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: 1fr max-content 1fr;
+  align-content: stretch;
+  align-items: center;
+  grid-template-areas: "image name" "image description" "image social";
+}
+  .component-member > * {
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+  .member__image {
+    grid-area: image;
+    align-self: stretch;
+  }
+  .member__name {
+    grid-area: name;
+    align-self: end;
+  }
+  .member__description {
+    grid-area: description;
+  }
+  .member__social {
+    grid-area: social;
+    align-self: start;
+  }
+}
+@media (max-width: 1023px) {
+.component-member {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  grid-gap: 24px;
+}
+  .member__image {
+    margin: 0 auto;
+  }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  .member__image {
+    width: 320px;
+    padding-top: 480px;
+  }
+}
+@media (max-width: 639px) {
+  .member__image {
+    width: 80%;
+    padding-top: 120%;
+  }
+}
+/* BRIEF */
+.component-brief {
+  position: relative;
+  padding: 64px 0;
+  display: grid;
+  grid-gap: 64px;
+}
+  .component-brief > * {
+    position: relative;
+  }
+  .brief__image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+    .brief__image img {
+      position: absolute;
+      bottom: 0;
+      max-height: calc(100% - 64px);
+    }
+  .brief__title {
+    font-family: 'JuventusFans-Bold', sans-serif;
+    text-transform: capitalize;
+    text-align: center;
+    font-size: 3em;
+  }
+  .brief__description {
+    width: 60%;
+    display: grid;
+    grid-gap: 32px;
+    text-align: center;
+    line-height: 1.8em;
+  }
+    .brief__description p {
+    }
+  .brief__options {
+    text-transform: uppercase;
+    font-size: 1.2em;
+  }
+@media (min-width: 1024px) {
+.component-brief {
+  justify-items: end;
+}
+    .brief__image img {
+      max-width: 40%;
+    }
+    [dir="ltr"] .brief__image img {
+      left: 0;
+    }
+    [dir="rtl"] .brief__image img {
+      right: 0;
+    }
+  .brief__title {
+    justify-self: center;
+  }
+}
+@media (max-width: 1023px) {
+.component-brief {
+  justify-items: center;
+}
+    .brief__image img {
+      right: 10%;
+      left: 10%;
+      width: 80%;
+      object-fit: contain;
+      opacity: 0.4;
+    }
+}
+/* TEAM */
+.component-team {
+}
+  .team__items {
+    display: grid;
+    grid-gap: 32px 0;
+  }
+    .team__item {
+      display: grid;
+      grid-gap: 12px;
+    }
+      .team__item__image {
+        position: relative;
+      }
+        .team__item__image img {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          object-position: 50% 100%;
+        }
+      .team__item__name {
+        text-transform: capitalize;
+        text-align: center;
+        font-family: 'JuventusFans-Bold', sans-serif;
+        font-size: 2em;
+      }
+      .team__item__title {
+        text-align: center;
+        line-height: 1.8em;
+      }
+      .team__item__social {
+      }
+        .team__item__social ul {
+          margin: -8px;
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+          .team__item__social li {
+            margin: 8px;
+          }
+            .team__item__social a {
+            }
+            .team__item__social li .icon {
+              width: 24px;
+              height: 24px;
+            }
+@media (min-width: 1024px) {
+  .team__items {
+    grid-template-columns: repeat(6, 1fr);
+  }
+    .team__item {
+      grid-column-end: span 2;
+    }
+    .team__item:last-child:nth-child(3n+1) {
+      grid-column-start: 3;
+    }
+    .team__item:nth-last-child(2):nth-child(3n+1) {
+      grid-column-start: 2;
+    }
+      .team__item__image {
+        padding-top: 150%;
+      }
+      [dir="ltr"] .team__item:nth-child(1) .team__item__image, [dir="rtl"] .team__item:nth-child(3) .team__item__image {
+        transform: translateX(30%);
+      }
+      [dir="rtl"] .team__item:nth-child(1) .team__item__image, [dir="ltr"] .team__item:nth-child(3) .team__item__image {
+        transform: translateX(-30%);
+      }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .team__item {
+    grid-template-columns: 20% max-content;
+    justify-content: center;
+  }
+      .team__item__image {
+        grid-row-end: span 3;
+      }
+}
+@media (max-width: 767px) {
+      .team__item__image {
+        padding-top: 100%;
+      }
+}
+/* ADVISORY */
+.component-advisory {
+}
+  .advisory__items {
+    display: grid;
+    grid-gap: 32px 48px;
+  }
+    .advisory__item {
+      display: grid;
+      grid-gap: 12px;
+    }
+      .advisory__item__image {
+        position: relative;
+        padding-top: 100%;
+      }
+        .advisory__item__image img {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: 50% 0%;
+        }
+      .advisory__item__name {
+        text-transform: capitalize;
+        text-align: center;
+        font-family: 'JuventusFans-Bold', sans-serif;
+        font-size: 2em;
+      }
+      .advisory__item__title {
+        text-align: center;
+        line-height: 1.8em;
+      }
+      .advisory__item__social {
+      }
+        .advisory__item__social ul {
+          margin: -8px;
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+          .advisory__item__social li {
+            margin: 8px;
+          }
+            .advisory__item__social a {
+            }
+            .advisory__item__social li .icon {
+              width: 24px;
+              height: 24px;
+            }
+@media (min-width: 1024px) {
+  .advisory__items {
+    grid-template-columns: repeat(6, 1fr);
+  }
+    .advisory__item {
+      grid-column-end: span 2;
+    }
+    .advisory__item:last-child:nth-child(3n+1) {
+      grid-column-start: 3;
+    }
+    .advisory__item:nth-last-child(2):nth-child(3n+1) {
+      grid-column-start: 2;
+    }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .advisory__items {
+    grid-template-columns: repeat(4, 1fr);
+  }
+    .advisory__item {
+      grid-column-end: span 2;
+    }
+    .advisory__item:last-child:nth-child(2n+1) {
+      grid-column-start: 2;
+    }
+}
+/* STATISTICS */
+.component-statistics {
+
+}
+  .component-statistics ul {
+    display: grid;
+    grid-gap: 64px;
+    padding: 32px 0;
+  }
+    .component-statistics li {
+      position: relative;
+    }
+    .component-statistics li::before {
+      content: '';
+      display: block;
+      padding-top: 100%;
+    }
+      .statistics__item {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+      }
+      [dir="ltr"] .statistics__item {
+        transform: rotateZ(90deg);
+      }
+      [dir="rtl"] .statistics__item {
+        transform: rotateZ(-90deg);
+      }
+        .statistics__item__label, .statistics__item__data {
+          box-sizing: border-box;
+        }
+        .statistics__item__label {
+          display: grid;
+          align-content: end;
+          border-bottom: 2px solid #000;
+          padding: 8px 0;
+          width: 100%;
+          height: 50%;
+          font-size: 1.2em;
+        }
+        [dir="ltr"] .statistics__item__label {
+          padding-right: 50%;
+        }
+        [dir="rtl"] .statistics__item__label {
+          padding-left: 50%;
+        }
+        .statistics__item__data {
+          padding: 0 8px;
+          width: 50%;
+          height: 100%;
+          text-align: end;
+          font-family: 'JuventusFans-Bold', sans-serif;
+          font-size: 4em;
+        }
+        [dir="ltr"] .statistics__item__data {
+          transform-origin: 0 0;
+          transform: translateY(50%) rotateZ(-90deg);
+        }
+        [dir="rtl"] .statistics__item__data {
+          transform-origin: 100% 0;
+          transform: translateY(50%) rotateZ(90deg);
+        }
+@media (min-width: 1024px) {
+  .component-statistics ul {
+    grid-template-columns: repeat(6, 1fr);
+  }
+    .component-statistics li {
+      grid-column-end: span 2;
+    }
+    .component-statistics li:last-child:nth-child(3n+1) {
+      grid-column-start: 3;
+    }
+    .component-statistics li:nth-last-child(2):nth-child(3n+1) {
+      grid-column-start: 2;
+    }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .component-statistics ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+    .component-statistics li {
+      grid-column-end: span 2;
+    }
+    .component-statistics li:last-child:nth-child(2n+1) {
+      grid-column-start: 2;
+    }
+}
+/* SPONSORS PARTNERS */
+.component-sponsors-partners {
+}
+  .component-sponsors-partners ul {
+    display: grid;
+  }
+    .component-sponsors-partners li {
+      display: grid;
+      place-content: center;
+      place-items: center;
+      position: relative;
+      box-sizing: border-box;
+      border: 1px solid #eee;
+    }
+      .component-sponsors-partners img {
+        position: absolute;
+        top: 10%;
+        right: 10%;
+        bottom: 10%;
+        left: 10%;
+        width: 80%;
+        height: 80%;
+        object-fit: contain;
+      }
+@media (min-width: 1024px) {
+  .component-sponsors-partners ul {
+    grid-template-columns: repeat(8, 12.5%);
+  }
+    .component-sponsors-partners li {
+      padding-top: 100%;
+    }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .component-sponsors-partners ul {
+    grid-template-columns: repeat(4, 25%);
+  }
+    .component-sponsors-partners li {
+      padding-top: 96px;
+    }
+}
+@media (max-width: 767px) {
+  .component-sponsors-partners ul {
+    grid-template-columns: repeat(2, 50%);
+  }
+    .component-sponsors-partners li {
+      padding-top: 64px;
+    }
+}
