@@ -18,6 +18,10 @@
 html, body {
   height: 100%;
 }
+body {
+  display: grid;
+  align-content: space-between;
+}
 img, object {
   display: block;
 }
@@ -40,9 +44,13 @@ a {
   color: inherit;
 }
 abbr[title] {
+  text-transform: uppercase;
   border-bottom-width: 0;
 }
 /* GENERAL */
+.size--screen {
+  min-height: calc(100vh - 80px);
+}
 [lang="en"] {
   font-family: 'Questrial-Regular', sans-serif;
 }
@@ -123,6 +131,10 @@ a.theme--arrowed::after {
   width: 100%;
   box-shadow: 0 3px 6px 0 #00000029;
   background-color: #fff;
+}
+.component-section.theme--overlay {
+  position: fixed;
+  z-index: 1;
 }
 .component-section.theme--header + .component-section {
   margin-top: 80px;
@@ -325,9 +337,6 @@ a.theme--arrowed::after {
   grid-template-rows: max-content 1fr;
   grid-gap: 32px;
 }
-.component-division.size--screen {
-  min-height: calc(100vh - 80px);
-}
 .component-division.theme--label {
   padding-top: 0;
   grid-gap: 0;
@@ -354,6 +363,9 @@ a.theme--arrowed::after {
     }
   .division__main {
 
+  }
+  .component-division.size--screen .division__main {
+    padding: 0 64px;
   }
   .component-division.theme--label .division__main {
     border-top: 1px solid #7070704a;
@@ -688,7 +700,6 @@ a.theme--arrowed::after {
 /* EVENT INTRO */
 .component-event-intro {
   position: relative;
-  min-height: calc(100vh - 80px);
   display: grid;
   font-size: 1.2em;
 }
@@ -794,10 +805,11 @@ a.theme--arrowed::after {
 /* ABOUT US */
 .component-about-us {
   display: grid;
+  align-content: center;
   grid-gap: 64px;
 }
 .component-about-us.theme--screen {
-  padding: 0 64px;
+  height: 100%;
 }
   .about-us__image {
     
@@ -813,11 +825,9 @@ a.theme--arrowed::after {
   }
 /* MAP */
 .component-map {
-  height: 100%;
 }
 .component-map.theme--screen {
-  box-sizing: border-box;
-  padding: 0 calc(4% + 64px);
+  height: 100%;
 }
   .map__view {
     width: 100%;
@@ -826,12 +836,10 @@ a.theme--arrowed::after {
   }
 /* ALERT */
 .component-alert {
+  display: grid;
 }
 .component-alert.theme--screen {
-  box-sizing: border-box;
-  padding: 0 calc(4% + 64px);
   height: 100%;
-  display: grid;
 }
   .alert__content {
     place-self: center;
@@ -850,6 +858,468 @@ a.theme--arrowed::after {
   .alert__content {
     font-size: 4em;
   }
+}
+/* USER CONTAINER */
+.component-user-container {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+.component-user-container.theme--tickets, .component-user-container.theme--designers {
+  position: relative;
+  box-sizing: border-box;
+}
+.component-user-container.theme--tickets::before, .component-user-container.theme--designers::before {
+  content: '';
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 100%;
+}
+.component-user-container.theme--tickets {
+}
+.component-user-container.theme--tickets::before {
+  background-image: url('../img/user-container--tickets.png');
+}
+.component-user-container.theme--designers {
+}
+.component-user-container.theme--designers::before {
+  background-image: url('../img/user-container--designers.png');
+}
+@media (min-width: 1024px) {
+.component-user-container.theme--tickets, .component-user-container.theme--designers {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+[dir="ltr"] .component-user-container.theme--tickets, [dir="ltr"] .component-user-container.theme--designers {
+  padding-right: 64px;
+  padding-left: 40%;
+}
+[dir="rtl"] .component-user-container.theme--tickets, [dir="rtl"] .component-user-container.theme--designers {
+  padding-right: 40%;
+  padding-left: 64px;
+}
+.component-user-container.theme--tickets::before, .component-user-container.theme--designers::before {
+  bottom: 0;
+  width: 40%;
+  height: calc(100% - 32px);
+}
+[dir="ltr"] .component-user-container.theme--tickets::before, [dir="ltr"] .component-user-container.theme--designers::before {
+  left: 0;
+}
+[dir="rtl"] .component-user-container.theme--tickets::before, [dir="rtl"] .component-user-container.theme--designers::before {
+  right: 0;
+}
+}
+@media (max-width: 1023px) {
+.component-user-container.theme--tickets, .component-user-container.theme--designers {
+  padding: 352px 64px 32px;
+}
+.component-user-container.theme--tickets::before, .component-user-container.theme--designers::before {
+  top: 32px;
+  left: 0;
+  right: 0;
+  height: calc(320px - 32px);
+}
+}
+/* LIST */
+.component-list {
+  display: grid;
+  grid-gap: 32px;
+}
+  .list__title {
+    font-family: 'JuventusFans-Bold', sans-serif;
+    font-size: 2em;
+  }
+  .list__items {
+
+  }
+    .list__items ul {
+      display: grid;
+      grid-gap: 8px;
+    }
+      .list__items li {
+        display: grid;
+        grid-template-columns: max-content 1fr 32px;
+        justify-content: start;
+        align-items: center;
+        grid-gap: 16px;
+      }
+      .list__items li::before, .list__items li::after {
+        content: '';
+      }
+      .list__items li::before {
+        border: 6px solid #000;
+        border-radius: 50%;
+        width: 12px;
+        height: 12px;
+      }
+      .list__items li:hover::before {
+        background-color: #000;
+      }
+      .list__items li::after {
+        width: 32px;
+        height: 32px;
+        background-repeat: no-repeat;
+      }
+      [dir="ltr"] .list__items li::after {
+        background-image: url('../img/link-arrow--ltr.png');
+        background-position: 100% 50%;
+      }
+      [dir="rtl"] .list__items li::after {
+        background-image: url('../img/link-arrow--rtl.png');
+        background-position: 0% 50%;
+      }
+      .list__item {
+
+      }
+        .list__item__hint {
+          font-size: 0.8em;
+        }
+/* FORM */
+.component-form {
+  width: 100%;
+}
+  .form__items {
+    display: grid;
+    grid-gap: 16px;
+  }
+    .form__item {
+    }
+    .form__item.type--title {
+      text-transform: capitalize;
+      font-family: 'JuventusFans-Bold', sans-serif;
+      font-size: 2em;
+    }
+    .form__item.type--input {
+      display: grid;
+      grid-gap: 4px;
+    }
+    .form__item.type--buttons {
+    }
+    .form__item.type--hints {
+      display: grid;
+      grid-gap: 4px;
+    }
+    .form__item.theme--large {
+      padding: 16px 0;
+    }
+      .form__item__label {
+        text-transform: capitalize;
+      }
+      .form__item__input {
+
+      }
+        .form__item__input input, .form__item__input textarea {
+          box-sizing: border-box;
+          outline-width: 0;
+          border: 1px solid #000;
+          padding: 8px 16px;
+          width: 100%;
+          background-color: transparent;
+        }
+      .form__item__button {
+        cursor: pointer;
+        display: block;
+        box-sizing: border-box;
+        outline-width: 0;
+        border: 1px solid #000;
+        padding: 8px 16px;
+        text-transform: capitalize;
+        background-color: transparent;
+        color: #000;
+      }
+      .form__item__button.status--active, .form__item__button:hover {
+        background-color: #000;
+        color: #fff;
+      }
+      .form__item.type--buttons ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        margin: -8px;
+      }
+        .form__item.type--buttons li {
+          margin: 8px;
+        }
+      .form__item__hint {
+        font-size: 0.8em;
+      }
+@media(min-width: 768px) {
+  .form__items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+    .form__item.theme--full {
+      grid-column-end: span 2;
+    }
+}
+/* TABS */
+.component-tabs {
+}
+.component-tabs.theme--steps, .component-tabs.theme--schedule {
+  display: grid;
+  grid-gap: 32px;
+}
+.component-tabs.theme--steps {
+  justify-items: center;
+  align-content: space-between;
+  grid-template-rows: 1fr max-content;
+  width: 100%;
+  height: 100%;
+}
+.component-tabs.theme--schedule {
+  grid-template-areas: "links" "items";
+  grid-template-rows: max-content max-content;
+  justify-items: center;
+  align-content: space-between;
+}
+  .tabs__items {
+  }
+  .component-tabs.theme--steps .tabs__items {
+    justify-self: stretch;
+    display: grid;
+    align-content: center;
+  }
+  .component-tabs.theme--schedule .tabs__items {
+    grid-area: items;
+  }
+    .tabs__item {
+    }
+    .tabs__item:not(.status--active) {
+      display: none;
+    }
+    .tabs__item.status--active {
+    }
+  .tabs__links {
+  }
+  .component-tabs.theme--steps .tabs__links {
+  }
+  .component-tabs.theme--schedule .tabs__links {
+    grid-area: links;
+  }
+    .tabs__links ul {
+    }
+    .component-tabs.theme--steps .tabs__links ul, .component-tabs.theme--schedule .tabs__links ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+      .tabs__links li {
+      }
+      .component-tabs.theme--schedule .tabs__links li {
+        margin: 0 8px;
+      }
+        .tabs__link {
+        }
+        .tabs__link.status--active {
+        }
+        .component-tabs.theme--steps .tabs__link {
+          position: relative;
+          padding: 24px 32px 0;
+        }
+        .component-tabs.theme--steps .tabs__link::before, .component-tabs.theme--steps .tabs__link::after {
+          content: '';
+          position: absolute;
+        }
+        .component-tabs.theme--steps .tabs__link.status--active::after, .component-tabs.theme--steps .tabs__link:hover::after {
+          background-color: #000;
+        }
+        .component-tabs.theme--steps .tabs__link::after {
+          top: 0;
+          right: calc(50% - 8px);
+          left: calc(50% - 8px);
+          border: 4px solid #000;
+          border-radius: 50%;
+          width: 8px;
+          height: 8px;
+        }
+        .component-tabs.theme--steps .tabs__link::before {
+          top: 4px;
+          right: 0;
+          left: 0;
+          height: 8px;
+          background-color: #eee;
+        }
+        .component-tabs.theme--steps .tabs__links li:first-child .tabs__link::before {
+          border-radius: 4px 0 0 4px;
+        }
+        .component-tabs.theme--steps .tabs__links li:last-child .tabs__link::before {
+          border-radius: 0 4px 4px 0;
+        }
+        .component-tabs.theme--schedule .tabs__link {
+          border-bottom: 2px solid transparent;
+          padding: 8px 0;
+          text-transform: uppercase;
+        }
+        .component-tabs.theme--schedule .tabs__link.status--active {
+          border-bottom-color: #c1c1c1;
+        }
+/* LAYOUT */
+.component-layout {
+  display: grid;
+  grid-gap: 24px 0;
+}
+  .layout__main {
+    padding-top: 24px;
+    display: grid;
+    grid-gap: 24px;
+    justify-content: center;
+  }
+  .layout__side {
+    padding: 24px 0;
+    display: grid;
+    grid-gap: 24px;
+    place-content: center;
+  }
+@media (min-width: 1024px) {
+.component-layout {
+  grid-template-columns: 75% 25%;
+}
+  .layout__main {
+    padding-right: 16%;
+    padding-left: 16%;
+  }
+  .layout__side {
+    padding-right: 16%;
+    padding-left: 16%;
+  }
+}
+@media (max-width: 1023px) {
+  .layout__main {
+    padding-right: calc(4% + 64px);
+    padding-left: calc(4% + 64px);
+  }
+  .layout__side {
+    padding-right: calc(4% + 64px);
+    padding-left: calc(4% + 64px);
+  }
+}
+/* SCHEDULE */
+.component-schedule {
+  display: grid;
+  grid-gap: 12px;
+}
+  .schedule__title {
+    text-transform: capitalize;
+    font-family: 'JuventusFans-Bold', sans-serif;
+    font-size: 3em;
+  }
+  .schedule__items {
+    display: grid;
+    grid-gap: 24px;
+    position: relative;
+    padding-bottom: 12px;
+  }
+  [dir="ltr"] .schedule__items {
+    padding-left: 32px;
+  }
+  [dir="rtl"] .schedule__items {
+    padding-right: 32px;
+  }
+  .schedule__items::before {
+    content: '';
+    position: absolute;
+    border-radius: 4px 4px 0 0;
+    width: 8px;
+    height: 100%;
+    background-color: #c1c1c1;
+  }
+  [dir="ltr"] .schedule__items::before {
+    left: 0;
+  }
+  [dir="rtl"] .schedule__items::before {
+    right: 0;
+  }
+    .schedule__item {
+      position: relative;
+      display: grid;
+      grid-auto-flow: column;
+      grid-gap: 16px;
+      justify-content: start;
+      align-items: center;
+    }
+    .schedule__item::before {
+      content: '';
+      position: absolute;
+      top: calc(50% - 10px);
+      border: 4px solid #000;
+      border-radius: 50%;
+      width: 12px;
+      height: 12px;
+    }
+    [dir="ltr"] .schedule__item::before {
+      left: -38px;
+    }
+    [dir="rtl"] .schedule__item::before {
+      right: -38px;
+    }
+    .schedule__item:hover::before {
+      background-color: #000;
+    }
+    .schedule__item.theme--large {
+
+    }
+    .schedule__item.theme--large::before {
+      top: calc(50% - 14px);
+      width: 20px;
+      height: 20px;
+      background-color: #000;
+    }
+    [dir="ltr"] .schedule__item.theme--large::before {
+      left: -42px;
+    }
+    [dir="rtl"] .schedule__item.theme--large::before {
+      right: -42px;
+    }
+      .schedule__item__date {
+        display: grid;
+        justify-items: center;
+      }
+      .schedule__item.theme--large .schedule__item__date {
+        text-transform: uppercase;
+        font-size: 0.8em;
+      }
+        .schedule__item__date__day {
+          
+        }
+        .schedule__item.theme--large .schedule__item__date__day {
+          font-family: 'JuventusFans-Bold', sans-serif;
+          font-size: 6em;
+        }
+      .schedule__item__description {
+
+      }
+      .schedule__item.theme--large .schedule__item__description {
+        font-family: 'JuventusFans-Bold', sans-serif;
+        font-size: 3em;
+      }
+/* EVENT */
+.component-event {
+  display: grid;
+  grid-gap: 16px;
+}
+  .event__name {
+    font-family: 'JuventusFans-Bold', sans-serif;
+    font-size: 2em;
+  }
+  .event__place {
+
+  }
+  .event__address {
+
+  }
+    .event__address ul {
+      display: grid;
+      grid-gap: 8px;
+    }
+      .event__address li {
+
+      }
+/* CONTACT US */
+.component-contact-us {
+}
+.component-contact-us.theme--screen {
+  padding: 0 calc(4% + 64px);
 }
 /* NEWS */
 .component-news {
@@ -1004,22 +1474,22 @@ a.theme--arrowed::after {
       padding-top: 32px;
     }
 }
-/* ARTICLE */
-.component-article {
+/* COVER */
+.component-cover {
+  position: relative;
+  box-sizing: border-box;
+  padding: 32px;
+  min-height: 40vh;
   display: grid;
-  grid-gap: 64px;
-  align-content: start;
-  padding-bottom: 32px;
-  min-height: calc(100vh - 80px);
+  justify-items: center;
+  align-content: center;
 }
-  .article__image, .article__title {
-    height: 40vh;
-  }
-  .article__image {
+  .cover__image {
     position: absolute;
     width: 100%;
+    height: 100%;
   }
-    .article__image img {
+    .cover__image img {
       position: absolute;
       top: 0;
       right: 0;
@@ -1028,26 +1498,46 @@ a.theme--arrowed::after {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: blur(6px);
+      filter: blur(4px);
     }
-  .article__content, .article__title {
+  .cover__content, .cover__title {
     width: calc(92% - 128px);
     max-width: 960px;
-    justify-self: center;
     text-align: center;
   }
-  .article__title {
+  .cover__title, .cover__content {
     position: relative;
-    display: grid;
-    place-content: center;
-    place-items: center;
-    text-transform: capitalize;
     text-shadow: 0 3px 6px #00000029;
-    font-family: 'JuventusFans-Bold', sans-serif;
-    font-size: 10vh;
     color: #fff;
   }
+  .cover__title {
+    text-transform: capitalize;
+    font-family: 'JuventusFans-Bold', sans-serif;
+    font-size: 4em;
+  }
+  .cover__content {
+    max-height: 4em;
+    overflow: hidden;
+    font-size: 1.8em;
+    line-height: 2em;
+  }
+  .cover__content::first-letter {
+    text-transform: uppercase;
+  }
+/* ARTICLE */
+.component-article {
+  display: grid;
+  grid-gap: 64px;
+  justify-content: center;
+  justify-items: center;
+  box-sizing: border-box;
+  padding: 96px 0 32px;
+  min-height: calc(60vh - 80px);
+}
   .article__content {
+    width: calc(92% - 128px);
+    max-width: 960px;
+    text-align: center;
     line-height: 1.8em;
   }
 /* MEMBERS */
@@ -1157,9 +1647,10 @@ a.theme--arrowed::after {
 .component-member {
   display: grid;
   grid-gap: 32px 0;
-  align-content: start;
+  align-content: center;
+}
+.component-member.theme--screen {
   padding: 0 calc(4% + 64px);
-  min-height: calc(100vh - 80px);
 }
   .member__image {
     position: relative;
@@ -1228,11 +1719,6 @@ a.theme--arrowed::after {
   }
 }
 @media (max-width: 1023px) {
-.component-member {
-  padding-top: 24px;
-  padding-bottom: 24px;
-  grid-gap: 24px;
-}
   .member__image {
     margin: 0 auto;
   }

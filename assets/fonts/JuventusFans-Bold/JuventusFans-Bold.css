@@ -1,0 +1,13 @@
+/* font converted using font-converter.net. thank you! */
+@font-face {
+  font-family: "JuventusFans-Bold";
+  src: url("./JuventusFans-Bold.eot"); /* IE9 Compat Modes */
+  src: url("./JuventusFans-Bold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("./JuventusFans-Bold.otf") format("opentype"), /* Open Type Font */
+    url("./JuventusFans-Bold.svg") format("svg"), /* Legacy iOS */
+    url("./JuventusFans-Bold.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("./JuventusFans-Bold.woff") format("woff"), /* Modern Browsers */
+    url("./JuventusFans-Bold.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}

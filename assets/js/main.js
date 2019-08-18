@@ -1,8 +1,23 @@
 const popups = {};
-document.querySelectorAll('.component-popup').forEach(element => {
+document.querySelectorAll('[data-component="popup"]').forEach(element => {
   popups[element.getAttribute('data-popup')] = new Popup(element);
 });
 
+const tabs = {};
+document.querySelectorAll('[data-component="tabs"]').forEach(element => {
+  tabs[element.getAttribute('data-tabs')] = new Tabs(element);
+});
+
+document.querySelectorAll('[data-link]').forEach(element => {
+  element.addEventListener('click', (event) => {
+    event.preventDefault();
+    switch(element.getAttribute('data-link')) {
+      case 'tab':
+        tabs[element.getAttribute('data-tabs')].activeTab(element.getAttribute('data-tab'));
+        break;
+    }
+  });
+});
 document.querySelectorAll('[data-switch]').forEach(element => {
   element.addEventListener('click', (event) => {
     event.preventDefault();
