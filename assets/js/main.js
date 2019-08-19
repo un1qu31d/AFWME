@@ -18,6 +18,7 @@ document.querySelectorAll('[data-link]').forEach(element => {
     }
   });
 });
+
 document.querySelectorAll('[data-switch]').forEach(element => {
   element.addEventListener('click', (event) => {
     event.preventDefault();
@@ -40,6 +41,8 @@ document.querySelectorAll('[data-switch]').forEach(element => {
     element.querySelector('.icon').classList.toggle('status--off');
   });
 });
+
+AOS.init();
 
 // https://snazzymaps.com/
 document.querySelectorAll('.component-map .map__view').forEach(element => {

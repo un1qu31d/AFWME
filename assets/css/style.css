@@ -40,7 +40,7 @@ li {
 a, abbr[title] {
   text-decoration: none;
 }
-a {
+a, input, textarea {
   color: inherit;
 }
 abbr[title] {
@@ -157,6 +157,22 @@ a.theme--arrowed::after {
   background-repeat: no-repeat;
   background-position: 50% 32px;
   background-size: 50%;
+}
+.component-section.theme--contact-us {
+  position: relative;
+  background-image: url('../img/theme--contact-us.png');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+}
+.component-section.theme--contact-us::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #00000080;
 }
 /* HEADER */
 .component-header {
@@ -286,6 +302,12 @@ a.theme--arrowed::after {
     right: 0;
     padding-right: 4%;
   }
+  .component-sticky.theme--light .sticky__side-button {
+    background-color: #0000004f;
+  }
+    .component-sticky.theme--light .sticky__side-button .icon {
+      background-color: #fff;
+    }
   .sticky__bullets {
     top: calc(50% + (64px / 2) + 16px + 40px);
   }
@@ -986,6 +1008,9 @@ a.theme--arrowed::after {
   }
     .form__item {
     }
+    .form__item.type--header {
+      text-align: center;
+    }
     .form__item.type--title {
       text-transform: capitalize;
       font-family: 'JuventusFans-Bold', sans-serif;
@@ -1007,6 +1032,30 @@ a.theme--arrowed::after {
       .form__item__label {
         text-transform: capitalize;
       }
+      .form__item.type--header .form__item__label {
+        display: grid;
+        grid-template-columns: minmax(32px, 1fr) auto minmax(32px, 1fr);
+        grid-gap: 0 16px;
+        line-height: 32px;
+      }
+      .form__item.type--header .form__item__label::before, .form__item.type--header .form__item__label::after {
+        content: '';
+        background-image: repeating-linear-gradient(180deg, transparent 0, transparent 15px, #fff 15px, #fff 17px, transparent 17px, transparent 32px);
+      }
+      .form__item.type--header .form__item__label::before {
+      }
+      .form__item.type--header .form__item__label::after {
+      }
+      .form__item__title {
+        font-family: 'JuventusFans-Bold', sans-serif;
+        font-size: 5em;
+      }
+      .form__item__title::first-letter {
+        text-transform: uppercase;
+      }
+      .form__item__description {
+
+      }
       .form__item__input {
 
       }
@@ -1017,6 +1066,9 @@ a.theme--arrowed::after {
           padding: 8px 16px;
           width: 100%;
           background-color: transparent;
+        }
+        .component-form.theme--light .form__item__input input, .component-form.theme--light .form__item__input textarea {
+          border: 2px solid #fff;
         }
       .form__item__button {
         cursor: pointer;
@@ -1029,8 +1081,17 @@ a.theme--arrowed::after {
         background-color: transparent;
         color: #000;
       }
+      .component-form.theme--light .form__item__button {
+        border: 2px solid #fff;
+        background-color: #fff;
+        color: #000;
+      }
       .form__item__button.status--active, .form__item__button:hover {
         background-color: #000;
+        color: #fff;
+      }
+      .component-form.theme--light .form__item__button.status--active, .component-form.theme--light .form__item__button:hover {
+        background-color: transparent;
         color: #fff;
       }
       .form__item.type--buttons ul {
@@ -1300,7 +1361,7 @@ a.theme--arrowed::after {
 }
   .event__name {
     font-family: 'JuventusFans-Bold', sans-serif;
-    font-size: 2em;
+    font-size: 4em;
   }
   .event__place {
 
@@ -1317,13 +1378,58 @@ a.theme--arrowed::after {
       }
 /* CONTACT US */
 .component-contact-us {
+  display: grid;
+  box-sizing: border-box;
+  padding: 32px 0;
 }
 .component-contact-us.theme--screen {
-  padding: 0 calc(4% + 64px);
+  padding-right: calc(4% + 64px);
+  padding-left: calc(4% + 64px);
+}
+.component-contact-us.theme--light {
+  color: #fff;
+}
+  .contact-us__form, .contact-us__separator, .contact-us__event {
+    position: relative;
+  }
+  .contact-us__form {
+  }
+  .contact-us__separator {
+    background-color: #fff;
+  }
+  .contact-us__event {
+  }
+@media (min-width: 1024px) {
+.component-contact-us {
+  grid-template-columns: 1fr 1px 1fr;
+  grid-gap: 0 96px;
+  justify-content: center;
+  align-items: center;
+}
+  .contact-us__separator {
+    height: 80%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+.component-contact-us.theme--screen {
+  padding-right: calc(4% + 64px + 128px);
+  padding-left: calc(4% + 64px + 128px);
+}
+}
+@media (max-width: 1023px) {
+.component-contact-us {
+  grid-template-rows: minmax(max-content, 1fr) 1px minmax(max-content, 1fr);
+  grid-gap: 32px 0;
+  justify-items: center;
+  align-content: center;
+}
+  .contact-us__separator {
+    width: 80%;
+  }
 }
 /* NEWS */
 .component-news {
-
+  overflow: hidden;
 }
   .news__items {
     display: grid;
@@ -1457,22 +1563,132 @@ a.theme--arrowed::after {
     grid-template-columns: repeat(2, 1fr);
   }
     .articles__item:not(:nth-child(1)):not(:nth-child(2)) {
-      display: grid;
       border-top: 1px solid #c3ccd366;
       padding-top: 32px;
     }
     .articles__item {
       grid-row-end: span 4;
     }
-    .articles__item:nth-child(3n+1) {
+    .articles__item:nth-child(4n+1), .articles__item:nth-child(4n+3) {
       grid-row-end: span 5;
     }
+      .articles__item:nth-child(4n+1) .articles__item__image, .articles__item:nth-child(4n+3) .articles__item__image {
+        padding-top: 100%;
+      }
 }
 @media (max-width: 1023px) {
     .articles__item:not(:nth-child(1)) {
       border-top: 1px solid #c3ccd366;
       padding-top: 32px;
     }
+}
+/* DESIGNERS */
+.component-designers {
+
+}
+  .designers__items {
+    display: grid;
+    grid-gap: 32px;
+  }
+    .articles__item {
+    }
+      .designers__item {
+        text-transform: capitalize;
+        color: #263843;
+      }
+        .designers__item__image {
+          position: relative;
+          padding-top: 66.66%
+        }
+          .designers__item__image img {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        .designers__item__name, .designers__item__location, .designers__item__brand, .designers__item__about, .designers__item__contact, .designers__item__social-options {
+          padding: 12px 24px;
+          background-color: #fff;
+          box-shadow: 0 3px 3px 0 #00000029;
+        }
+        .designers__item__name, .designers__item__location {
+          text-align: center;
+        }
+        .designers__item__name {
+          padding-top: 24px;
+          padding-bottom: 4px;
+          font-family: 'JuventusFans-Bold', sans-serif;
+          font-size: 1.2em;
+        }
+        .designers__item__location {
+          padding-top: 4px;
+          padding-bottom: 24px;
+        }
+        .designers__item__brand {
+          display: grid;
+          grid-auto-flow: column;
+          justify-content: space-between;
+        }
+        .designers__item__about, .designers__item__contact {
+          display: grid;
+          grid-gap: 12px;
+        }
+        .designers__item__about {
+        }
+        .designers__item__contact {
+        }
+          .designers__item__label {
+            font-family: 'JuventusFans-Bold', sans-serif;
+            font-size: 1.2em;
+          }
+          .designers__item__content {
+          }
+        .designers__item__social-options {
+          display: grid;
+          grid-auto-flow: column;
+          justify-content: space-between;
+          align-items: center;
+          padding-bottom: 24px;
+        }
+          .designers__item__social-options ul {
+            margin: -4px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+          }
+            .designers__item__social-options li {
+              margin: 4px;
+              font-size: 0.8em;
+            }
+              .designers__item__social-options li .icon {
+                width: 18px;
+                height: 18px;
+              }
+              .designers__item__social-options li a.theme--arrowed::after {
+                width: 18px;
+                height: 12px;
+                background-size: cover;
+                background-position: 100% 50%;
+              }
+              [dir="ltr"] .designers__item__social-options li a.theme--arrowed::after {
+                margin-left: 8px;
+              }
+              [dir="rtl"] .designers__item__social-options li a.theme--arrowed::after {
+                margin-right: 8px;
+              }
+@media (min-width: 1024px) {
+  .designers__items {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .designers__items {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 /* COVER */
 .component-cover {
@@ -1741,6 +1957,7 @@ a.theme--arrowed::after {
   padding: 64px 0;
   display: grid;
   grid-gap: 64px;
+  overflow: hidden;
 }
   .component-brief > * {
     position: relative;
@@ -1807,6 +2024,7 @@ a.theme--arrowed::after {
 }
 /* TEAM */
 .component-team {
+  overflow: hidden;
 }
   .team__items {
     display: grid;
@@ -1896,6 +2114,7 @@ a.theme--arrowed::after {
 }
 /* ADVISORY */
 .component-advisory {
+  overflow: hidden;
 }
   .advisory__items {
     display: grid;
@@ -1974,7 +2193,7 @@ a.theme--arrowed::after {
 }
 /* STATISTICS */
 .component-statistics {
-
+  overflow: hidden;
 }
   .component-statistics ul {
     display: grid;
