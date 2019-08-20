@@ -1,6 +1,17 @@
 class Tabs {
   constructor(element) {
     this.element = element;
+    
+    document.querySelectorAll('[data-link]').forEach(element => {
+      element.addEventListener('click', (event) => {
+        event.preventDefault();
+        switch(element.getAttribute('data-link')) {
+          case 'tab':
+            tabs[element.getAttribute('data-tabs')].activeTab(element.getAttribute('data-tab'));
+            break;
+        }
+      });
+    });
   }
   activeTab(index) {
     this.element.querySelectorAll('.tabs__item.status--active, .tabs__link.status--active').forEach(element => {

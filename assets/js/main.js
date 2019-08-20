@@ -8,17 +8,6 @@ document.querySelectorAll('[data-component="tabs"]').forEach(element => {
   tabs[element.getAttribute('data-tabs')] = new Tabs(element);
 });
 
-document.querySelectorAll('[data-link]').forEach(element => {
-  element.addEventListener('click', (event) => {
-    event.preventDefault();
-    switch(element.getAttribute('data-link')) {
-      case 'tab':
-        tabs[element.getAttribute('data-tabs')].activeTab(element.getAttribute('data-tab'));
-        break;
-    }
-  });
-});
-
 document.querySelectorAll('[data-switch]').forEach(element => {
   element.addEventListener('click', (event) => {
     event.preventDefault();
@@ -39,6 +28,25 @@ document.querySelectorAll('[data-switch]').forEach(element => {
     }
     element.querySelector('.icon').classList.toggle('status--on');
     element.querySelector('.icon').classList.toggle('status--off');
+  });
+});
+
+
+document.querySelectorAll('.form__item__input.type--image .form__item__image').forEach(element => {
+  element.addEventListener('click', (event) => {
+    element.parentElement.querySelector('input[type="file"]').dispatchEvent(new MouseEvent('click', {bubbles: true}));
+  });
+});
+
+document.querySelectorAll('.form__item__input.type--image input').forEach(element => {
+  element.addEventListener('change', (event) => {
+    if(element.files.length && ['png', 'jpeg', 'jpg', 'gif'].indexOf(element.value.substring(element.value.lastIndexOf('.') + 1).toLowerCase()) != -1) {
+      const reader = new FileReader();
+      reader.onload = event => {
+        element.parentElement.querySelector('.form__item__image img').setAttribute('src', event.target.result);
+      }
+      reader.readAsDataURL(element.files[0]);
+    }
   });
 });
 
